@@ -1,3 +1,3 @@
-# Ethan's simple website
+# Ethan's website
 
-Just what it says.
+Description
