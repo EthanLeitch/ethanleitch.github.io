@@ -1,8 +1,5 @@
-p  {
-  color: blue;
-  margin: 100px;
-  font-family: 'Roboto Mono', sans-serif;
-  font-size: 160%;
+body {
+  background-color: #57aaaa;
 }
 .center {
   margin: 0;
