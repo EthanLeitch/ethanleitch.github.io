@@ -4,3 +4,8 @@ p  {
   font-family: 'Roboto Mono', sans-serif;
   font-size: 160%;
 }
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
