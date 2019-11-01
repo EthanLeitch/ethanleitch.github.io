@@ -1,9 +1,7 @@
 body {
   background-image: url("/media/images/paper.png");
 }
-p.solidborder {
-  border-style: solid;
-}
+p.solid { border-style: solid; }
 p.doubleborder {
   border-style: double;
 }
