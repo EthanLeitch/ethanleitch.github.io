@@ -4,3 +4,21 @@ body {
   color: white;
   text-align: center;
 }
+
+.question {
+  border-bottom: 2px solid #c3deff;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  background-color: transparent;
+  color: white;
+  outline: none;
+  font-size: 125%;
+  text-align: center;
+  transition: border-bottom 0.4s ease-in-out;
+}
+
+.question:focus {
+   border-bottom: 2px solid white;
+   width: relative;
+}
