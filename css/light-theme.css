@@ -1,0 +1,26 @@
+body {
+  /* Stripy background */
+  background-color: #48cecb;
+  background-image: linear-gradient(45deg, 
+  #48cecb 25%, #68d6d4 25%, #68d6d4 50%, #48cecb 50%, 
+  #48cecb 75%, #68d6d4 75%, #68d6d4 100%);
+  background-size: 56.57px 56.57px;
+
+  color: black;
+}
+
+a {
+  color: black;
+}
+
+a:active{
+  color: black;
+}
+
+div {
+  background-color: white;
+}
+
+.main_div {
+  border: 2px solid black;
+}
