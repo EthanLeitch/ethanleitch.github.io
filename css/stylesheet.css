@@ -57,3 +57,30 @@ a:hover{
     font-style: normal;
     color: rgb(124, 124, 255);
 }
+
+body {
+    /* Starry background */
+    background-color: #2e222f;
+    background-image: url("../media/images/stars.png");
+    background-size: 20%;
+  
+    color: white;
+}
+  
+  
+  
+a {
+    color: white;
+}
+
+a:active {
+    color: white;
+}
+
+div {
+    background-color: black;
+}
+
+.main_div {
+    border: 2px solid white;
+}
