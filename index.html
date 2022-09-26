@@ -4,9 +4,17 @@
 	<title>Ethan's website</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/stylesheet.css">
+	<script src="js/moment.js"></script>
 </head>
 
 <body>
+
+	<script>
+		var years = moment().diff('2006-02-08', 'years');
+		window.onload = function(){  
+			document.getElementById("age").innerHTML = years;
+		}
+	</script>
 
 	<div class="main_div">
 
@@ -18,7 +26,7 @@
 			<img src="media/images/portrait_moshed.jpg" width="140" height="140" class="photo"> 
 			<ul>
 				<li>he/him</li>
-				<li>16 years old</li>
+				<li><span id="age">XX</span> years old</li>
 				<li>hobbies <span>&#8212;</span> music, comedy and videomaking</li>
 				<li>programmer: Python, C, C#, webdev</li>
 			</ul>
