@@ -10,9 +10,9 @@
 <body>
 
 	<script>
-		var years = moment().diff('2006-02-08', 'years');
-		window.onload = function(){  
-			document.getElementById("age").innerHTML = years;
+		// work in progress
+		function destroySite(){
+			document.getElementsByName("div").style.display = 'none';
 		}
 	</script>
 
@@ -22,17 +22,12 @@
 			<div id="parent">
 
 			</div>
-			<h2 class="chromatic">Ethan's website</h2>
-			<img src="media/images/portrait_moshed.jpg" width="140" height="140" class="photo"> 
+			<h2>Ethan's website</h2>
+			<p>Hey, I'm Ethan. Here's some stuff about me:</p>
 			<ul>
-				<li>he/him</li>
-				<li><span id="age">XX</span> years old</li>
-				<li>hobbies <span>&#8212;</span> music, comedy and videomaking</li>
-				<li>programmer: Python, C, C#, webdev</li>
+				<li>My hobbies: music, reading, and making funny videos</li>
+				<li>Programmer: Python, C#, webdev. occasionally C</li>
 			</ul>
-			<div>
-				<p>"In the beginning the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move."<br><span>&#8212;</span> <i>The Hitchhiker's Guide to the Galaxy</i>, by Douglas Adams</p>
-			</div>
 			
 		</div>
 
@@ -46,12 +41,19 @@
 			<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=2940135964/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://ethanleitch.bandcamp.com/album/depths">depths by Ethan</a></iframe>
 		</div>
 		
+		
+
 		<footer style="text-align: center;">
 
+			<!--<p><i>Was this site too boring? Feel free to <button onclick="destroySite();"><i>destroy it</i></button></i></p>-->
+			
 			<p><a href="https://github.com/EthanLeitch" target="_blank">GitHub</a> · <a href="https://ethanleitch.bandcamp.com" target="_blank">Bandcamp</a> · <a href="https://www.youtube.com/channel/UCwtiAXTkPdOsw9DGpspRAnQ" target="_blank">YouTube</a></p>
-
+			
+			<hr>
+			<p style="color: #545454; margin-bottom: 5px;"><i>johnvertisement&trade;</i></p>
+			<iframe src="https://john.citrons.xyz/embed?ref=ethanleitch.github.io" style="margin-left:auto;display:block;margin-right:auto;max-width:732px;width:100%;height:94px;border:none;"></iframe>
 		</footer>
-	
+
 	</div>
 
 </body>
