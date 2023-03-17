@@ -3,6 +3,13 @@ body {
     text-align: centre;
     height: 100%;
     padding: 0;
+
+    /* Starry background */
+    background-color: #2e222f;
+    background-image: url("../media/images/stars.png");
+    background-size: 275px;
+  
+    color: white;
 }
 
 hr {
@@ -12,67 +19,48 @@ hr {
     border-top: 2px solid #545454;
 }
 
-a:hover{
-    color: #cbb3e6;
-}
-
-.main_div {
-    text-align: left;
-    align-items: left; 
-    border-radius: 5px;
-
-    width: 600px;
-    padding: 25px;
-    padding-block: 5px;
-    margin: 20px auto;
-}
-
-.chromatic {
-    text-shadow: 0.02em 0.01em 0px rgba(251, 12, 12, 1), 
-    0em -0.02em 0px rgba(12, 79, 251, 1),
-    -0.02em 0em 0px rgba(52, 251, 12, 1);
-  
-    /*
-    text-shadow: 3px 2px 2px rgba(251, 12, 12, 1), 
-    0px -1px 3px rgba(12, 79, 251, .5),
-    -3px 0px 2px rgba(52, 251, 12, 1);
-    */
-}
-
-.photo {
-    float: right;
-    padding: 25px auto;
-    padding-left: 5px;
-    filter: brightness(1.3) invert(0.17) /*  saturate(2.6) sepia(0.25); */
-}
-
-.tab { 
-    margin-left: 20px; 
-}
-
-body {
-    /* Starry background */
-    background-color: #2e222f;
-    background-image: url("../media/images/stars.png");
-    background-size: 20%;
-  
-    color: white;
-}
-  
-  
-  
 a {
     color: white;
+}
+
+a:hover{
+    color: #cbb3e6;
 }
 
 a:active {
     color: white;
 }
 
-div {
-    background-color: black;
+.main_div {
+    text-align: left;
+    align-items: left; 
+    border-radius: 5px;
+    border: 2px solid #cbb3e6;
+
+    /* For mobile */
+    width: auto;
+    padding: 25px;
+    padding-block: 5px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-.main_div {
-    border: 2px solid #cbb3e6;
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .main_div {
+        width: 46.875vw;
+        padding: 25px;
+        padding-block: 5px;
+
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: black;
+    }
+}
+
+.chromatic {
+    text-shadow: 0.02em 0.01em 0px rgba(251, 12, 12, 1), 
+    0em -0.02em 0px rgba(12, 79, 251, 1),
+    -0.02em 0em 0px rgba(52, 251, 12, 1);
 }
