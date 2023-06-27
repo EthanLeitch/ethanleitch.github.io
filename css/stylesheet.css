@@ -1,5 +1,10 @@
+@font-face {
+    font-family: 'custard';
+    src: local('pixelsix.ttf');
+}
+
 body {
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: 'custard', 'Helvetica', 'Arial', sans-serif;
     text-align: centre;
     height: 100%;
     padding: 0;
@@ -37,25 +42,25 @@ a:active {
     border-radius: 5px;
     border: 2px solid #cbb3e6;
 
-    /* For mobile */
-    width: auto;
+    /* For desktop: */
+    width: 46.875vw;
     padding: 25px;
     padding-block: 5px;
+
     margin: auto;
-    background-color: rgba(0, 0, 0, 0.8);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: black;
 }
 
-@media only screen and (min-width: 768px) {
-    /* For desktop: */
+@media only screen and (max-width: 768px) {
     .main_div {
-        width: 46.875vw;
+        /* For mobile */
+        width: auto;
         padding: 25px;
         padding-block: 5px;
-
         margin: auto;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        background-color: black;
+        background-color: rgba(0, 0, 0, 0.8);
     }
 }
 
