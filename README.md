@@ -1,2 +1,0 @@
-# Ethan's personal website
-
