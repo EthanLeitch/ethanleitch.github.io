@@ -4,54 +4,93 @@
 	<title>Ethan's website</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/stylesheet.css">
+	<!--<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+	<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>-->
 </head>
 
 <body>
-
-	<div class="main_div">
-
-		<header style="text-align: center;">
-			<h4>Help fight censorship! <a href="https://snowflake.torproject.org/">Install the Snowflake extension.</a></h4>
-		</header>
-
-		<hr>
-
-		<div>
-			<h1>Ethan's website</h1>
-			<p>Hey, I'm Ethan. Here's some stuff about me:</p>
-			<ul>
-				<li>My hobbies: music, reading, and making funny videos</li>
-				<li>Programmer: Python, C#, webdev. occasionally C</li>
-			</ul>
+	
+	<div class="blocks">
+		<div style="margin-left: 15%;">
+			<h1>ethan's website</h1>
 		</div>
 
-		<hr>
-
-		<h2>Projects</h2>
-		<a href="https://github.com/EthanLeitch" target="_blank"><img src="media/images/github_projects.png" alt="Multiple GitHub projects arranged in a grid" width="100%" height="100%"></a>
-		
-		<h2>Music</h2>
-		<div>
-			<iframe src="https://bandcamp.com/EmbeddedPlayer/album=2940135964/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/" title="Embedded music player" style="border: 0; width: 100%; height: 120px;" seamless><a href="https://ethanleitch.bandcamp.com/album/depths">depths by Ethan</a></iframe>
+		<!-- The Button! -->
+		<div style="float: left; margin-top: 75px; margin-left: 200px;">
+			<h1><button onclick="toggleMusicMode();">?</button></h1> <!-- window.location.href = 'music.html'; -->
 		</div>
 
-		<footer style="text-align: center;">
-			<p><a href="https://github.com/EthanLeitch" target="_blank">GitHub</a> · <a href="https://ethanleitch.bandcamp.com" target="_blank">Bandcamp</a> · <a href="https://www.youtube.com/channel/UCwtiAXTkPdOsw9DGpspRAnQ" target="_blank">YouTube</a></p>
-			
-			<hr>
-
-			<p style="color: #c9c9c9; margin-bottom: 5px;"><i>johnvertisement&trade;</i></p>
-			<iframe src="https://john.citrons.xyz/embed?ref=ethanleitch.github.io" title="Comedic fake advertisement" style="margin-left:auto;display:block;margin-right:auto;max-width:732px;width:100%;height:94px;border:none;"></iframe>
-			
-			<hr>
-			
-			<div class="badges">
-				<img src="media/images/badges/gnu-linux.gif" alt="made on gnu/linux"/> <img src="media/images/badges/thevoid.gif" alt="powered by the void" height="31" /> <img src="media/images/badges/seedyourtorrents.gif" alt="seed your torrents"/> <img src="media/images/badges/mikubutton.gif" alt="miku approved!"/>
+		<div style="margin-right: 15%">
+			<h1>projects</h1>
+			<div class="grid" id="projects">
+				<div>
+					<p><b>ao3scraper</b></p>
+					<p> A python webscraper that keeps track of fanfictions on AO3</p>
+				</div>
+				<div>
+					<p><b>digitech-website-2022</b></p>
+					<p>An interactive map of John McGlashan College</p>
+				</div>
+				<div>
+					<p><b>addition-dungeon</b></p>
+					<p>An educational game designed to help students learn simple addition</p>
+				</div>
+				<div>
+					<p><b>wellsouth-project</b></p>
+					<p>Intemediary program between BambooHR and Power Automate, made for Wellsouth</p>
+				</div>
 			</div>
-		</footer>
+		</div>
+		<div style="margin-left: 7%; width: auto; max-width: 500px;">
+			<h1>music</h1>
+			<div class="grid music" id="music">
+				<div>
+					<img src="media/images/albums/dead_keys.jpg">
+					<div>
+						<p><b>Dead Keys (2024)</b></p>
+						<p>Dead Keys is a free sample pack of spooky piano sounds. Recorded from a broken piano in Alexandra.</p>
+					</div>
+				</div>
+				<br>
+				<div>
+					<img src="media/images/albums/nuclear_concerto.jpg">
+					<div>
+						<p><b>Nuclear Concerto (2023)</b></p>
+						<p>Nuclear Concerto is a concept album themed around the construction, detonation and aftermath of a fictional nuclear bomb.</p>
+					</div>
+				</div>
+				<br>
+				<div>
+					<img src="media/images/albums/depths.jpg">
+					<div>
+						<p><b>depths (2023)</b></p>
+						<p>depths is my longest album to-date. It's dungeonsynth. It's inspired by Vivivivi's excellent "in my head" and the works of Black Mountain Transmitter.</p>
+					</div>
+				</div>
+			</div>
 
+			<!--<script>
+				var flkty = new Flickity('.album-gallery', {
+					// options
+					cellAlign: 'left',
+					contain: true,
+					wrapAround: true
+				  });
+			</script>-->
+		</div>
+		<div>
+			<h1>featured vid</h1>
+			<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/_v1LlHTIgnc?si=_4fSd84riyeeZspr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		</div>
+		<div>
+			<p onclick="setRandomWord();" style="cursor: pointer; user-select: none;"><i>Powered by <span id="random-word">unloaded javascript</span>!</i></p>
+		</div>
 	</div>
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+	<script src="js/main.js"></script>
+	
 </body>
 
 </html>
