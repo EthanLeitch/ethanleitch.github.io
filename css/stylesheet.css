@@ -43,7 +43,7 @@ a {
 }
 
 a:hover{
-    color: #cbb3e6;
+    color: var(--text);
 }
 
 a:active {
