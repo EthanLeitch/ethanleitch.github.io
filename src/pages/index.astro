@@ -1,0 +1,75 @@
+---
+import "$lib/styles/app.css";
+import { Button } from "$lib/components/ui/button";
+import { Card, CardTitle, CardContent, CardFooter } from "$lib/components/ui/card";
+import { Input } from "$lib/components/ui/input";
+
+import { ModeWatcher } from "mode-watcher";
+
+import ModeToggle from "$lib/components/custom/iconbutton/mode-toggle.svelte";
+import AddButton from "$lib/components/custom/iconbutton/add.svelte";
+
+import CharacterList from "$lib/components/custom/character/characterlist.svelte";
+import Character from "$lib/components/custom/character/character.svelte";
+
+---
+
+<!-- Load theme js -->
+<script is:inline>
+  const isBrowser = typeof localStorage !== 'undefined';
+  const getThemePreference = () => {
+    if (isBrowser && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme');
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark' : 'light';
+  };
+  
+  const isDark = getThemePreference() === 'dark';
+  document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+ 
+  if (isBrowser) {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  }
+</script>
+ 
+<script>
+	function test() {
+		console.log('test');
+		alert('test')
+	}
+</script>
+
+
+<html lang="en">
+	<head>
+		<title>Initiative Tracker</title>
+	</head>
+	<body>
+		<h1>Stoneburner Initiative Tracker</h1>
+
+		
+
+		<CharacterList client:load />
+		
+		<div></div>
+		<!-- <AddButton on:click{} />-->
+
+		<br><br>
+		<hr>
+		
+		
+		<!-- Theme button -->
+		<ModeWatcher client:load />
+		<ModeToggle client:load />
+	</body>
+</html>
+
+</script>
