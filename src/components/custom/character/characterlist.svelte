@@ -14,7 +14,7 @@
 
     import { initiative } from "$lib/stores/stoneburner";
 
-    const dropTargetStyle = {outline: 'rgba(0, 0, 0, 0.7) solid 2px'}
+    const dropTargetStyle = {outline: 'rgba(0, 0, 0, 0.7) solid 0px'}
     
     let position: 'left' | 'right' = 'left';
     let index = 1;
@@ -26,6 +26,7 @@
     }
 
     function nextRound() {
+        let lastElement = $initiative['right'].slice(-1).pop();
         $initiative['left'] = $initiative['left'].concat($initiative['right']);
         $initiative['right'] = [];
     }
@@ -41,27 +42,45 @@
     
     $initiative['right'] = [];
 </script>
+<!--<style lang="tailwind">
+    .dumbo {
+        background-color: red;
+        div {
+            visibility: hidden;
+        }
+    }
+</style>-->
+
+<style>
+    .special {
+        color: red;
+        visibility: hidden;
+    }
+</style>
+
+
 
 <Card class="p-2.5 flex-1 overflow-y-auto">
-    <div class="flex flex-col space-between space-y-2.5">
+    <div class="space-between space-y-2.5">
         <CardTitle>{title}</CardTitle>
 
-        <section use:dndzone="{{items: $initiative[position], dropTargetStyle}}" on:consider="{handleDndConsider}" on:finalize="{handleDndFinalize}" style="overflow: scroll;" class="space-between space-y-2.5">
+        <section use:dndzone="{{items: $initiative[position], dropTargetStyle}}" on:consider="{handleDndConsider}" on:finalize="{handleDndFinalize}" style="overflow: scroll; height: 100%;" class="space-between space-y-2.5">
             {#each $initiative[position] as character (character.id)}
                 <!-- Workaround for https://github.com/isaacHagoel/svelte-dnd-action/issues/186 -->
                 {#if character.isDndShadowItem}
-                    <div><Character/></div>
+                    <div><Character class="preview bg-muted"/></div>
                 {:else}
                     <div><Character id={character.id} position={position}/></div>
                 {/if}
             {/each}
 
+            <!-- Handle buttons -->
             <div class="flex flex-col space-between space-y-2.5">
-            {#if position === 'left'}
-                <AddButton on:click={addCharacter}/>
-            {:else}
-                <Button on:click={nextRound}>Next Round</Button>
-            {/if}
+                {#if position === 'left'}
+                    <AddButton on:click={addCharacter}/>
+                {:else}
+                    <Button on:click={nextRound}>Next Round</Button>
+                {/if}
             </div>
         </section>
 

@@ -89,5 +89,15 @@
     @apply leading-7 [&:not(:first-child)]:mt-6;
   }
 
+  .preview {
+    visibility: visible;
+    /* Hacky fix to disable border on preview cards */
+    border: 2px solid transparent;
+
+    div {
+      visibility: hidden;
+    }
+  }
+
 }
 
