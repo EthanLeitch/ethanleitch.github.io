@@ -30,17 +30,14 @@ import Test from "$lib/components/custom/character/test.svelte";
   </div>
 
   <div class="h-svh flex flex-row"> <!-- Note: space-between space-x-3 not working -->
-    <CharacterList title="Up Next" client:load />
-    <!--<CharacterList title="Done Turn" client:load />  -->
+    <CharacterList title="Up Next" position="left" client:load />
+    <CharacterList title="Turn Order" position="right" client:load />  
   </div>
-
-  <Test/>
-
 
   <br>
 
   <div>
-    <p><i>The current initiative is automatically saved to your browser's storage.</i></p>
+    <!-- <p><i>The current initiative is automatically saved to your browser's storage.</i></p> -->
   </div>
 
 		<!-- <AddButton on:click{} />-->

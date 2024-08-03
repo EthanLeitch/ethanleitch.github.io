@@ -10,7 +10,7 @@
     import { Button } from "$lib/components/ui/button/index.js";
 </script>
    
-<Button variant="outline" size="default" on:click>
+<Button variant="outline" size="default" style="primary" on:click>
     <Add
       class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all"
     />

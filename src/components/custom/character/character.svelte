@@ -2,21 +2,35 @@
     import TrashButton from "$lib/components/custom/iconbutton/trash.svelte";
     import GripVertical from "lucide-svelte/icons/grip-vertical";
 
+    // Class theme
+	/*import type { HTMLAttributes } from "svelte/elements";
+	import { cn } from "$lib/utils.js";
+
+	type $$Props = HTMLAttributes<HTMLDivElement>;
+    let className: $$Props["class"] = undefined;
+
+    export { className as class };*/
+
+    // shadcn imports
     import { Card, CardTitle, CardContent, CardFooter } from "$lib/components/ui/card";
     import { Input } from "$lib/components/ui/input";
     import { Textarea } from "$lib/components/ui/textarea";
 
-   import { initiative } from "$lib/stores/stoneburner";
+    // Internal logic
+    import { initiative } from "$lib/stores/stoneburner";
 
-    export let id = 0;
+    export let id = "";
+    export let position: 'left' | 'right' = 'left';
+
     $: self = findInArray(id);
 
-    function findInArray(target: number) {
-        return $initiative.find(item => item.id === target) || {"id": 0, "name": "", "res": null, "atk": null};
+    function findInArray(target: string) {
+        console.log("Attempted to find", id);
+        return $initiative[position].find(item => item.id === target) || {"id": "", "name": "", "res": null, "atk": null};
     }
 
     function destroySelf() {
-        $initiative = $initiative.filter(m => m !== self);
+        $initiative[position] = $initiative[position].filter(m => m !== self);
     }
 </script>
 
