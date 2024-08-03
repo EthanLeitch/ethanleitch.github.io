@@ -1,12 +1,10 @@
 ---
 import "$lib/styles/app.css";
+import Layout from '$lib/layouts/Layout.astro';
+import Test from '$lib/components/custom/character/test.svelte'
+
 ---
 
-<html lang="en">
-    <head>
-        <title>Index</title>
-    </head>
-    <body>
-        <p>Site currently under maintenance. <a href="/stoneburner/">New project</a> coming soon!</p>
-    </body>
-</html>
+<Layout title="Index">
+    <p>Site currently under maintenance. <a href="/stoneburner/"><u>New project</u></a> coming soon!</p>
+</Layout>
