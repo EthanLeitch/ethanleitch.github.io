@@ -5,20 +5,17 @@ import ProjectCard from "$lib/components/custom/projectcard.svelte";
 import { Separator } from "$lib/components/ui/separator/index.js";
 ---
 
-<Layout title="Ethan Leitch" description="Ethan's website">
+<Layout title="Ethan's website" description="Hi, I'm Ethan! In my free time I make music, program, and play tabletop RPGS.">
     <div class="space-between space-y-5">
-    <h1>Ethan's Website</h1>
-    <p>Hi, I'm Ethan! In my free time, I make music, program, and play tabletop RPGS.</p>
-
-    <h2>Sitemap</h2>
-    <p><a href="/stoneburner"><u>Stoneburner Initiative Tracker</u></a></p>
+    <h1>Ethan's website</h1>
+    <p>Hi, I'm Ethan! In my free time I make music, program, and play tabletop RPGs.</p>
 
     <h2>Projects</h2>
     <div class="grid grid-cols-2 grid-rows-2 gap-2">
-        <ProjectCard title="ao3scraper" class="orange-200">A command-line webscraper that keeps track of fanfiction on AO3</ProjectCard>
-        <ProjectCard title="bampower">A program that connects Wellsouth's BambooHR database and Power Automate</ProjectCard>
-        <ProjectCard title="digitech-website-2022">An interactive map of John McGlashan College</ProjectCard>
-        <ProjectCard title="addition-dungeon">An educational game designed to help students learn simple addition</ProjectCard>
+        <ProjectCard title="ao3scraper" link="ao3scraper" class="orange-200">A command-line webscraper that keeps track of fanfiction on AO3</ProjectCard>
+        <ProjectCard title="bampower" link="wellsouth-project">A program that connects Wellsouth's BambooHR database and Power Automate</ProjectCard>
+        <ProjectCard title="digitech-website-2022" link="digitech-website-2022">An interactive map of John McGlashan College</ProjectCard>
+        <ProjectCard title="addition-dungeon" link="addition-dungeon">An educational game designed to help students learn simple addition</ProjectCard>
     </div>
 
     <h2>Album Showcase</h2>
