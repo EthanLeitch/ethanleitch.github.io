@@ -1,10 +1,32 @@
 ---
 import "$lib/styles/app.css";
 import Layout from '$lib/layouts/Layout.astro';
-import Test from '$lib/components/custom/character/test.svelte'
-
+import ProjectCard from "$lib/components/custom/projectcard.svelte";
+import { Separator } from "$lib/components/ui/separator/index.js";
 ---
 
-<Layout title="Ethan Leitch" description="Ethan's super awesome website">
-    <p>Site currently under maintenance. <a href="/stoneburner/"><u>New project</u></a> coming soon!</p>
+<Layout title="Ethan Leitch" description="Ethan's website">
+    <div class="space-between space-y-5">
+    <h1>Ethan's Website</h1>
+    <p>Hi, I'm Ethan! In my free time, I make music, program, and play tabletop RPGS.</p>
+
+    <h2>Sitemap</h2>
+    <p><a href="/stoneburner"><u>Stoneburner Initiative Tracker</u></a></p>
+
+    <h2>Projects</h2>
+    <div class="grid grid-cols-2 grid-rows-2 gap-2">
+        <ProjectCard title="ao3scraper" class="orange-200">A command-line webscraper that keeps track of fanfiction on AO3</ProjectCard>
+        <ProjectCard title="bampower">A program that connects Wellsouth's BambooHR database and Power Automate</ProjectCard>
+        <ProjectCard title="digitech-website-2022">An interactive map of John McGlashan College</ProjectCard>
+        <ProjectCard title="addition-dungeon">An educational game designed to help students learn simple addition</ProjectCard>
+    </div>
+
+    <h2>Album Showcase</h2>
+    <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/8uHa6C7XnWY?si=LIIEg6pt6rtq6Iqq" title="YouTube video player" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p><i>depths</i> is a dungeon-synth / orchestral / ambient album that I wrote in 2022. It was inspired by Louie Zong's "Beyond the Edge of the World" and "IN MY HEAD" by vivivivivi.</p>
+    <p>You can find my <a href="https://ethanleitch.bandcamp.com/music"><u>other albums on my BandCamp</u></a> or <a href="https://www.youtube.com/playlist?list=PLdxAtErt31hfxnm8g0OsgrdnGidEXjbe7"><u>YouTube.</u></a></p>
+    <hr>
+    <p>Unfortunately, we all must fufill our contractual obligations. Here's a <code>johnvertisement</code>.</p>
+    <iframe src="https://john.citrons.xyz/embed?ref=example.com" style="margin-left:auto;display:block;margin-right:auto;max-width:732px;width:100%;height:94px;border:none;"></iframe>
+    </div>
 </Layout>
