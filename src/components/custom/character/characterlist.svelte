@@ -21,7 +21,7 @@
 
     function addCharacter() {
         index++;
-        $initiative[position] = [...$initiative[position], {"id": (position + index), "name": "", "res": null, "atk": null}];
+        $initiative[position] = [...$initiative[position], {"id": (position + index), "name": "", "notes": "", "res": null, "res_max": null, "atk": null, "atk_max": null}];
         //console.log("addCharacter(): Set ID to", (position + index));
     }
 
@@ -44,6 +44,7 @@
 </script>
 
 <Card class="p-2.5 flex-1 overflow-y-auto">
+    
     <div class="flex flex-col h-full space-between space-y-2.5">
         <CardTitle>{title}</CardTitle>
 
@@ -77,6 +78,8 @@
             <!-- Expand drop area to entire list -->
             <div class="flex-grow" style="pointer-events: none;"/>
             
+        
         </section>
+    
     </div>
 </Card>
