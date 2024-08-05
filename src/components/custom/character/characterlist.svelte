@@ -42,35 +42,26 @@
     
     $initiative['right'] = [];
 </script>
-<!--<style lang="tailwind">
-    .dumbo {
-        background-color: red;
-        div {
-            visibility: hidden;
-        }
-    }
-</style>-->
-
-<style>
-    .special {
-        color: red;
-        visibility: hidden;
-    }
-</style>
-
-
 
 <Card class="p-2.5 flex-1 overflow-y-auto">
-    <div class="space-between space-y-2.5">
+    <div class="flex flex-col h-full space-between space-y-2.5">
         <CardTitle>{title}</CardTitle>
 
-        <section use:dndzone="{{items: $initiative[position], dropTargetStyle}}" on:consider="{handleDndConsider}" on:finalize="{handleDndFinalize}" style="overflow: scroll; height: 100%;" class="space-between space-y-2.5">
-            {#each $initiative[position] as character (character.id)}
+        <section use:dndzone="{{items: $initiative[position], dropTargetStyle}}" on:consider="{handleDndConsider}" on:finalize="{handleDndFinalize}" class="flex flex-col h-full space-between space-y-2.5">
+            {#each $initiative[position] as character, index (character.id)}
                 <!-- Workaround for https://github.com/isaacHagoel/svelte-dnd-action/issues/186 -->
                 {#if character.isDndShadowItem}
                     <div><Character class="preview bg-muted"/></div>
                 {:else}
                     <div><Character id={character.id} position={position}/></div>
+                    <!-- Handle highlight last on right -->
+                    <!--{#if position === 'left'}
+                        <div><Character id={character.id} position={position}/></div>
+                    {:else if (index + 1) !== $initiative[position].length}
+                        <div><Character id={character.id} position={position}/></div>
+                    {:else}
+                        <div><Character id={character.id} position={position} class="bg-accent"/></div>
+                    {/if}-->
                 {/if}
             {/each}
 
@@ -82,8 +73,10 @@
                     <Button on:click={nextRound}>Next Round</Button>
                 {/if}
             </div>
-        </section>
 
+            <!-- Expand drop area to entire list -->
+            <div class="flex-grow" style="pointer-events: none;"/>
             
+        </section>
     </div>
 </Card>

@@ -35,7 +35,7 @@
     }
 </script>
 
-<Card class={cn("p-2.5", className)}> <!-- style="visibility: visible;"-->
+<Card class={cn("p-2.5", className)}>
     <CardTitle>
         <div class="flex flex-row space-between space-x-2.5">
             <div class="m-auto"><GripVertical class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all"/></div>

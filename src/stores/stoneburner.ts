@@ -6,3 +6,9 @@ export const initiative = writable(
         "right": [{"id": "right0", "name": "", "res": null, "atk": null}]
     }
 );
+
+export const settings = writable(
+    {
+        "highlightLast": false
+    }
+)

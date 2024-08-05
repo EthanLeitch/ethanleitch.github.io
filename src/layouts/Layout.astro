@@ -42,7 +42,7 @@ import ModeToggle from "$lib/components/custom/iconbutton/mode-toggle.svelte";
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
@@ -54,8 +54,6 @@ import ModeToggle from "$lib/components/custom/iconbutton/mode-toggle.svelte";
 		<!-- Theme button -->
 		<ModeWatcher client:load />
 		<ModeToggle client:load />
-
-		
 
 		<main class="container mx-auto px-4 py-16 max-w-4xl">
 			<slot />

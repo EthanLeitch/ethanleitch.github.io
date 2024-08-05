@@ -19,10 +19,13 @@ import Test from "$lib/components/custom/character/test.svelte";
   </div>
 
   <br>
-  <div class="h-svh flex flex-row"> <!-- Note: space-between space-x-3 not working -->
+  <div class="h-screen flex flex-col sm:flex-row gap-x-2"> <!-- Note: space-between space-x-3 not working -->
     <CharacterList title="Up Next" position="left" client:load />
     <CharacterList title="Turn Order" position="right" client:load />  
   </div>
+
+  <p>Pick random (3) from (red / all)</p>
+
 
   <br>
 
