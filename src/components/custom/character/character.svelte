@@ -54,15 +54,15 @@
 <Card class={cn("p-2.5", className)}>
     <CardTitle>
         <Collapsible.Root class="space-y-2.5">
-                <div class="flex flex-row space-between space-x-2.5 items-center">
-                    <div class="m-auto"><GripVertical class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all"/></div>
-                    <Input type="text" placeholder="Name" bind:value={self.name} class="flex-3" /> <!-- bind:value={findInArray(id)} -->
-                    <Input type="number" placeholder="⚔️" step=2 min=0 bind:value={self.atk} max={self.atk_max} class="flex-3 w-16"/>
-                    <Input type="number" placeholder="❤️" min=0 bind:value={self.res} max={self.res_max} class="flex-3 w-16"/>
+                <div class="flex flex-row space-between space-x-2.5 items-center flex-wrap sm:flex-nowrap">
+                    <div><GripVertical class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all"/></div>
+                    <Input type="text" placeholder="Name" bind:value={self.name} class="basis-1/2" /> <!-- bind:value={findInArray(id)} -->
+                    <Input type="number" placeholder="⚔️" step=2 min=0 bind:value={self.atk} max={self.atk_max} class="basis-1/6"/>
+                    <Input type="number" placeholder="❤️" min=0 bind:value={self.res} max={self.res_max} class="basis-1/6"/>
                     
 
                     <Collapsible.Trigger asChild let:builder>
-                        <Button builders={[builder]} variant="ghost" size="icon" class="w-14 p-0">
+                        <Button builders={[builder]} variant="ghost" size="icon" class="basis-6">
                         <ChevronsUpDown class="h-4 w-4" />
                         <span class="sr-only">Toggle</span>
                         </Button>
