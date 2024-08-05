@@ -51,7 +51,7 @@
     }
 </script>
 
-<Card class={cn("p-2.5", className)}>
+<Card class={cn("p-2.5", className)}> <!--{cn( "p-2.5")} self.name-->
     <CardTitle>
         <Collapsible.Root class="space-y-2.5">
                 <div class="flex flex-row space-between space-x-2.5 items-center flex-wrap sm:flex-nowrap">
@@ -94,6 +94,7 @@
                                     </Dialog.Content>
                                 </Dialog.Root>
                             </div>
+                            <!--<div><TrashButton/></div>-->
                             <div><TrashButton on:click={destroySelf}/></div>
                         </div>
                     </div>
