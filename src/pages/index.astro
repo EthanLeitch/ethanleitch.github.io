@@ -7,15 +7,15 @@ import { Separator } from "$lib/components/ui/separator/index.js";
 
 <Layout title="Ethan's website" description="Hi, I'm Ethan! In my free time I make music, program, and play tabletop RPGS.">
     <div class="space-between space-y-5">
-    <h1>Ethan's website</h1>
+    <h1>Ethan's website</h1> <!-- class="bg-clip-text text-transparent inline-block bg-gradient-to-r from-red-500 via-orange-500 to-violet-500" -->
     <p>Hi, I'm Ethan! In my free time I make music, program, and play tabletop RPGs.</p>
 
     <h2>Projects</h2>
-    <div class="grid grid-cols-2 grid-rows-2 gap-2">
-        <ProjectCard title="ao3scraper" link="ao3scraper" class="orange-200">A command-line webscraper that keeps track of fanfiction on AO3</ProjectCard>
-        <ProjectCard title="bampower" link="wellsouth-project">A program that connects Wellsouth's BambooHR database and Power Automate</ProjectCard>
-        <ProjectCard title="digitech-website-2022" link="digitech-website-2022">An interactive map of John McGlashan College</ProjectCard>
-        <ProjectCard title="addition-dungeon" link="addition-dungeon">An educational game designed to help students learn simple addition</ProjectCard>
+    <div class="grid grid-cols-1 sm:grid-cols-2 grid-rows-2 gap-2">
+        <ProjectCard title="ao3scraper" link="ao3scraper" badges={[{'name': 'Python', 'class': 'bg-blue-500 hover:bg-blue-500'}, {'name': 'Rich', 'class': 'bg-yellow-500 hover:bg-yellow-500'}]}>A command-line webscraper that keeps track of fanfiction on AO3</ProjectCard>
+        <ProjectCard title="bampower" link="wellsouth-project" badges={[{'name': 'Python', 'class': 'bg-blue-500 hover:bg-blue-500'}]}>A program that connects Wellsouth's BambooHR database and Power Automate</ProjectCard>
+        <ProjectCard title="digitech-website-2022" link="digitech-website-2022" badges={[{'name': 'Python', 'class': 'bg-blue-500 hover:bg-blue-500'}, {'name': 'Flask', 'class': 'bg-orange-500 hover:bg-orange-500'}]}>An interactive map of John McGlashan College</ProjectCard>
+        <ProjectCard title="addition-dungeon" link="addition-dungeon" badges={[{'name': 'C# / Unity', 'class': 'bg-teal-500 hover:bg-teal-500'}]}>An educational game designed to help students learn simple addition</ProjectCard>
     </div>
 
     <h2>Album Showcase</h2>
