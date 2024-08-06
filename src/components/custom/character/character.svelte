@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { FakeInput } from "$lib/components/custom/fakeinput/index.ts";
     import TrashButton from "$lib/components/custom/iconbutton/trash.svelte";
     import EditButton from "$lib/components/custom/iconbutton/edit.svelte";
 
@@ -45,10 +46,25 @@
         $initiative[position] = $initiative[position].filter(m => m !== self);
     }
 
-    function write(event) {
-        self.res_max = event.target.value;
-        console.log(self);
+    import { focus } from "focus-svelte";
+	let enabled = false;
+	function toggleFocus() {
+		enabled = true;
+	}
+
+	let atkInput;
+	const focusAtk = () => {
+        atkInput.focus();
     }
+
+    let fakeInputClasses = "";
+	function setFakeFocus(state: boolean) {
+	    if (state) {
+			fakeInputClasses = "ring-ring outline-none ring-2 ring-offset-2";
+		} else {
+		    fakeInputClasses = "";
+		}
+	}
 </script>
 
 <Card class={cn("p-2.5", className)}> <!--{cn( "p-2.5")} self.name-->
@@ -57,9 +73,14 @@
                 <div class="flex flex-row space-between space-x-2.5 items-center flex-wrap sm:flex-nowrap">
                     <div><GripVertical class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all"/></div>
                     <Input type="text" placeholder="Name" bind:value={self.name} class="basis-1/2" /> <!-- bind:value={findInArray(id)} -->
-                    <Input type="number" placeholder="⚔️" step=2 min=0 bind:value={self.atk} max={self.atk_max} class="basis-1/6"/>
+
+                    <!-- This is fucked, but there's no other way to do it that looks good. -->
+                    <FakeInput on:click="{focusAtk}" class={"basis-1/5 flex flex-row items-center " + fakeInputClasses}> <!--relative flex flex-row items-center-->
+                        <p class="text-sm">d</p>
+                        <input type="number" placeholder="⚔️" step=2 min=0 bind:value={self.atk} max={self.atk_max} class="flex w-full focus-visible:outline-none" bind:this={atkInput} on:focusin={() => setFakeFocus(true)} on:focusout={() => setFakeFocus(false)} /> <!-- class="text-right" -->
+                    </FakeInput>
+
                     <Input type="number" placeholder="❤️" min=0 bind:value={self.res} max={self.res_max} class="basis-1/6"/>
-                    
 
                     <Collapsible.Trigger asChild let:builder>
                         <Button builders={[builder]} variant="ghost" size="icon" class="basis-6">
@@ -99,7 +120,7 @@
                         </div>
                     </div>
                 </Collapsible.Content>
-            
+
         </Collapsible.Root>
     </CardTitle>
 </Card>
