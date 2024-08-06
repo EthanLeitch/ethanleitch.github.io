@@ -1,4 +1,5 @@
 # ethanleitch.github.io
+*also ethanleitch.dev & ethanleitch.net*
 
 This website was made with [svelte + astro](https://docs.astro.build/en/guides/integrations-guide/svelte/), and [shadcn-svelte](shadcn-svelte.com) for the UI.
 If you want to run this site locally (for some reason) and you're not me, the first two commands here should help.
