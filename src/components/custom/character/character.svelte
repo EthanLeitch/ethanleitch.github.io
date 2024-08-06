@@ -69,12 +69,12 @@
                     <Input type="text" placeholder="Name" bind:value={self.name} class="basis-1/2" /> <!-- bind:value={findInArray(id)} -->
 
                     <!-- This is fucked, but there's no other way to do it that looks good. -->
-                    <FakeInput on:click="{focusAtk}" class={"basis-1/5 flex flex-row items-center " + fakeInputClasses}> <!--relative flex flex-row items-center-->
+                    <FakeInput on:click="{focusAtk}" style="flex-basis: 20.5%;" class={"flex flex-row items-center " + fakeInputClasses}> <!--relative flex flex-row items-center-->
                         <p class="text-sm">d</p>
                         <input type="number" placeholder="⚔️" step=2 min=0 bind:value={self.atk} max={self.atk_max} class="flex w-full focus-visible:outline-none" bind:this={atkInput} on:focusin={() => setFakeFocus(true)} on:focusout={() => setFakeFocus(false)} /> <!-- class="text-right" -->
                     </FakeInput>
 
-                    <Input type="number" placeholder="❤️" min=0 bind:value={self.res} max={self.res_max} class="basis-1/6"/>
+                    <Input type="number" placeholder="❤️" min=0 bind:value={self.res} max={self.res_max} style="flex-basis: 18%;"/>
 
                     <Collapsible.Trigger asChild let:builder>
                         <Button builders={[builder]} variant="ghost" size="icon" class="basis-6">
