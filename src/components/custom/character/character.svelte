@@ -46,12 +46,6 @@
         $initiative[position] = $initiative[position].filter(m => m !== self);
     }
 
-    import { focus } from "focus-svelte";
-	let enabled = false;
-	function toggleFocus() {
-		enabled = true;
-	}
-
 	let atkInput;
 	const focusAtk = () => {
         atkInput.focus();
