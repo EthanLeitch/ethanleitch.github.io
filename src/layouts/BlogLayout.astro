@@ -1,10 +1,5 @@
 ---
-interface Props {
-	title: string;
-	description: string;
-}
-
-const { title, description } = Astro.props;
+const {frontmatter} = Astro.props;
 
 import "$lib/styles/app.css";
 
@@ -15,18 +10,23 @@ import NavBar from "$lib/components/custom/navbar.svelte"
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
+		<meta name="description" content={frontmatter.description} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{frontmatter.title}</title>
 	</head>
 	<body>
 
 		<NavBar client:only="svelte" />
 
-		<main class="container mx-auto px-4 py-16 max-w-4xl">
-			<slot />
+		<main class="container mx-auto px-4 py-16 max-w-4xl flex flex-col space-y-3">
+		    <div>
+    		    <h1>{frontmatter.title}</h1>
+    			<p><i>{frontmatter.description}</i></p>
+			</div>
+			<hr>
+            <slot />
 		</main>
 	</body>
 </html>

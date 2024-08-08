@@ -86,10 +86,17 @@
 @layer components {
   h1 {
     @apply text-4xl font-extrabold lg:text-4xl;
-
   }
   h2 {
     @apply text-3xl font-extrabold lg:text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl font-extrabold lg:text-2xl;
+  }
+
+  a {
+    text-decoration: underline;
   }
 
 
