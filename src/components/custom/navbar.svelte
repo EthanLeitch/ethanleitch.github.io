@@ -1,7 +1,9 @@
-<script lang="ts">
+<script>
     import { ModeWatcher } from "mode-watcher";
     import ModeToggle from "$lib/components/custom/iconbutton/mode-toggle.svelte";
     import { Separator } from "$lib/components/ui/separator";
+
+    import { onMount } from 'svelte';
 
     // Light and dark theme
    	const isBrowser = typeof localStorage !== 'undefined';
@@ -38,7 +40,7 @@
 		</div>
 
 		<!-- Theme button -->
-		<ModeWatcher />
-		<ModeToggle />
+		<ModeWatcher client:load />
+		<ModeToggle client:load />
 	</div>
 </nav>
